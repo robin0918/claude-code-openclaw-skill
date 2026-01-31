@@ -1,0 +1,50 @@
+{
+  "name": "@openclaw/claude-code-local",
+  "version": "1.0.0",
+  "description": "调用本地Claude Code CLI进行代码生成、分析和重构的OPENCLAW技能",
+  "keywords": [
+    "openclaw",
+    "skill",
+    "claude",
+    "claude-code",
+    "code-generation",
+    "code-analysis",
+    "programming",
+    "developer-tools"
+  ],
+  "author": "OpenClaw User",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/openclaw/skills.git",
+    "directory": "claude-code-local"
+  },
+  "homepage": "https://docs.openclaw.ai/skills/claude-code-local",
+  "bugs": {
+    "url": "https://github.com/openclaw/skills/issues"
+  },
+  "openclaw": {
+    "skill": true,
+    "triggers": [
+      "claude",
+      "claude code",
+      "代码生成",
+      "代码分析",
+      "编程帮助"
+    ],
+    "capabilities": [
+      "code-generation",
+      "code-analysis",
+      "refactoring",
+      "debugging"
+    ],
+    "providers": [
+      "claude-code-cli"
+    ]
+  },
+  "files": [
+    "SKILL.md",
+    "README.md",
+    "scripts/"
+  ]
+}
