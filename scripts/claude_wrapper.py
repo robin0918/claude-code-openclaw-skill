@@ -25,6 +25,29 @@ import shutil
 from pathlib import Path
 from typing import Optional, Dict, Any
 
+def find_claude_path() -> str:
+    """查找claude可执行文件路径"""
+    # 首先尝试在PATH中查找
+    claude_path = shutil.which('claude')
+    if claude_path:
+        return claude_path
+
+    # 尝试常见安装路径
+    common_paths = [
+        "C:\\Users\\Administrator\\AppData\\Roaming\\npm\\claude",
+        "C:\\Program Files\\nodejs\\claude",
+        "/usr/local/bin/claude",
+        "/usr/bin/claude",
+        "~/.npm-global/bin/claude",
+    ]
+
+    for path in common_paths:
+        expanded = os.path.expanduser(path)
+        if os.path.exists(expanded):
+            return expanded
+
+    raise FileNotFoundError("未找到claude命令。请确保Claude Code CLI已安装并添加到PATH")
+
 def run_claude(task: str, workdir: Optional[str] = None, background: bool = False, timeout: int = 300) -> Dict[str, Any]:
     """
     运行 Claude Code 命令
@@ -38,6 +61,12 @@ def run_claude(task: str, workdir: Optional[str] = None, background: bool = Fals
     Returns:
         包含结果或错误信息的字典
     """
+    # 查找claude路径
+    try:
+        claude_path = find_claude_path()
+    except FileNotFoundError as e:
+        return {"error": str(e)}
+
     # 验证工作目录
     if workdir:
         workdir_path = Path(workdir).expanduser().resolve()
@@ -53,7 +82,7 @@ def run_claude(task: str, workdir: Optional[str] = None, background: bool = Fals
         workdir_path = Path.cwd()
 
     # 构建命令
-    cmd = ["claude", task]
+    cmd = [claude_path, task]
 
     try:
         # 如果在后台运行，使用subprocess.Popen
