@@ -73,6 +73,29 @@ bash pty:true workdir:~/project command:"claude '审查src/components/Button.tsx
 bash pty:true workdir:~/project command:"claude '修复这个TypeScript错误：$(cat error.log)'"
 ```
 
+## 预设模板
+
+技能提供丰富的预设任务模板，可直接复制使用：
+
+### 🎯 模板类别
+1. **代码生成模板** - 前端组件、后端API、数据库模型、测试代码
+2. **代码审查模板** - 安全审查、性能审查、代码质量审查
+3. **重构模板** - 架构重构、技术栈迁移、代码清理
+4. **调试模板** - 错误分析、性能调试
+5. **文档模板** - API文档、项目文档
+6. **配置模板** - 环境配置、工具配置
+
+### 📋 使用示例
+```bash
+# 使用前端组件模板
+bash pty:true workdir:~/frontend command:"claude '创建React函数组件UserProfile，包含：头像、用户名、邮箱、编辑按钮，使用TypeScript和Tailwind CSS'"
+
+# 使用安全审查模板
+bash pty:true workdir:~/project command:"claude '审查src/目录的安全漏洞：1.SQL注入 2.XSS攻击 3.认证绕过 4.敏感数据泄露 5.依赖漏洞'"
+```
+
+📖 **完整模板列表**请查看 [SKILL.md](SKILL.md) 中的详细模板章节。
+
 ## 高级功能
 
 ### 后台任务处理
@@ -122,6 +145,11 @@ bash pty:true workdir:~/backend background:true command:"claude '设计RESTful A
 3. 尝试在临时目录测试
 
 ## 更新日志
+
+### v1.1.0 (2026-02-01)
+- 添加丰富的预设任务模板（6大类，20+模板）
+- 扩展技能触发词和能力描述
+- 更新文档结构，增强易用性
 
 ### v1.0.0 (2026-02-01)
 - 初始版本发布

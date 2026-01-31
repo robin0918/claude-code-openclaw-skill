@@ -1,7 +1,7 @@
 {
   "name": "@openclaw/claude-code-local",
-  "version": "1.0.0",
-  "description": "调用本地Claude Code CLI进行代码生成、分析和重构的OPENCLAW技能",
+  "version": "1.1.0",
+  "description": "调用本地Claude Code CLI进行代码生成、分析、重构和调试的OPENCLAW技能，包含丰富的预设任务模板",
   "keywords": [
     "openclaw",
     "skill",
@@ -9,8 +9,13 @@
     "claude-code",
     "code-generation",
     "code-analysis",
+    "refactoring",
+    "debugging",
+    "code-review",
+    "templates",
     "programming",
-    "developer-tools"
+    "developer-tools",
+    "automation"
   ],
   "author": "OpenClaw User",
   "license": "MIT",
@@ -30,13 +35,21 @@
       "claude code",
       "代码生成",
       "代码分析",
-      "编程帮助"
+      "代码审查",
+      "代码重构",
+      "调试",
+      "编程帮助",
+      "模板"
     ],
     "capabilities": [
       "code-generation",
       "code-analysis",
+      "code-review",
       "refactoring",
-      "debugging"
+      "debugging",
+      "documentation",
+      "templates",
+      "automation"
     ],
     "providers": [
       "claude-code-cli"

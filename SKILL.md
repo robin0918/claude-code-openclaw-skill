@@ -159,6 +159,113 @@ bash pty:true workdir:~/project command:"claude '添加表单验证和错误处�
 - 确认 `workdir` 正确设置
 - 检查文件路径在指定工作目录内
 
+## 🎯 预设任务模板
+
+以下模板可直接复制使用，或根据具体需求调整：
+
+### 1. 代码生成模板
+
+#### 📱 前端组件生成
+```bash
+# React函数组件
+bash pty:true workdir:~/frontend command:"claude '创建React函数组件UserProfile，包含：头像、用户名、邮箱、编辑按钮，使用TypeScript和Tailwind CSS'"
+
+# Vue 3组件
+bash pty:true workdir:~/frontend command:"claude '创建Vue 3组合式API组件LoginForm，包含：邮箱/密码输入、验证、提交处理，使用<script setup>语法'"
+```
+
+#### 🖥️ 后端API生成
+```bash
+# Express.js REST API
+bash pty:true workdir:~/backend command:"claude '创建Express.js REST API端点：/api/users，支持GET(列表)、POST(创建)、PUT(更新)、DELETE(删除)，包含JWT验证和错误处理'"
+
+# 数据库模型
+bash pty:true workdir:~/backend command:"claude '创建User模型：id、name、email、password(加密)、createdAt，使用Prisma ORM，包含类型定义和关系'"
+```
+
+#### 🧪 测试代码生成
+```bash
+# 单元测试
+bash pty:true workdir:~/project command:"claude '为UserService类添加完整的单元测试，覆盖所有公有方法，使用Jest和mock'"
+
+# 集成测试
+bash pty:true workdir:~/project command:"claude '创建用户注册流程的集成测试，包含：API调用、数据库验证、错误场景'"
+```
+
+### 2. 代码审查模板
+
+#### 🔒 安全审查
+```bash
+bash pty:true workdir:~/project command:"claude '审查src/目录的安全漏洞：1.SQL注入 2.XSS攻击 3.认证绕过 4.敏感数据泄露 5.依赖漏洞'"
+```
+
+#### ⚡ 性能审查
+```bash
+bash pty:true workdir:~/project command:"claude '分析项目性能问题：1.数据库查询优化 2.内存泄漏 3.响应时间 4.打包大小 5.缓存策略'"
+```
+
+#### 🎨 代码质量审查
+```bash
+bash pty:true workdir:~/project command:"claude '审查代码质量：1.重复代码 2.函数复杂度 3.命名规范 4.注释完整性 5.架构一致性'"
+```
+
+### 3. 重构模板
+
+#### 🏗️ 架构重构
+```bash
+bash pty:true workdir:~/project background:true command:"claude '将单体应用重构为微服务架构：用户服务、产品服务、订单服务，定义API契约和数据流'"
+```
+
+#### 🔄 技术栈迁移
+```bash
+bash pty:true workdir:~/project command:"claude '将JavaScript项目迁移到TypeScript：添加类型定义、配置tsconfig、修复类型错误'"
+```
+
+#### 🧹 代码清理
+```bash
+bash pty:true workdir:~/project command:"claude '清理代码：1.删除未使用变量 2.简化复杂函数 3.统一代码风格 4.更新过时API'"
+```
+
+### 4. 调试模板
+
+#### 🐛 错误分析
+```bash
+# 捕获错误信息并分析
+ERROR=$(cat error.log 2>/dev/null || echo "错误信息")
+bash pty:true workdir:~/project command:"claude '分析并修复这个错误：$ERROR'"
+```
+
+#### 📊 性能调试
+```bash
+# 分析性能日志
+PERF_LOG=$(cat performance.log 2>/dev/null || echo "响应时间: 2.5s, 内存使用: 85%")
+bash pty:true workdir:~/project command:"claude '分析性能问题并给出优化建议：$PERF_LOG'"
+```
+
+### 5. 文档模板
+
+#### 📝 API文档
+```bash
+bash pty:true workdir:~/project command:"claude '为项目生成OpenAPI/Swagger文档，包含所有端点、请求/响应示例、错误码'"
+```
+
+#### 🗂️ 项目文档
+```bash
+bash pty:true workdir:~/project command:"claude '生成完整的项目文档：1.README安装说明 2.架构设计 3.API参考 4.部署指南 5.开发规范'"
+```
+
+### 6. 配置模板
+
+#### ⚙️ 环境配置
+```bash
+bash pty:true workdir:~/project command:"claude '创建项目配置文件：.env.example、docker-compose.yml、nginx.conf、CI/CD pipeline配置'"
+```
+
+#### 🧰 工具配置
+```bash
+bash pty:true workdir:~/project command:"claude '配置开发工具：ESLint规则、Prettier格式化、Husky git钩子、测试覆盖率配置'"
+```
+
 ## 📈 进阶用法
 
 ### 并行处理多个任务
